@@ -1,6 +1,29 @@
 # Ember-firebase-background-queue
 
-This README outlines the details of collaborating on this Ember addon.
+```javascript
+export default Ember.Component.extend({
+  background: Ember.inject.service(),
+
+  actions: {
+    something() {
+      this.get("background").request("some.job.name", { args }).then(response => {
+        // do something with the response
+      });
+    }
+  }
+});
+```
+
+## Configure
+
+```javascript
+import BackgroundService from 'Ember-firebase-background-queue/services/background';
+
+export default BackgroundService.extend({
+  firebaseApp: "my-app", // the firebase app to use
+  debug:        true     // display debug logging
+});
+```
 
 ## Installation
 

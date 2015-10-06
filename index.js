@@ -2,5 +2,8 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-firebase-background-queue'
+  name: 'ember-firebase-background-queue',
+  isDevelopingAddon: function() {
+    return true;
+  }
 };
